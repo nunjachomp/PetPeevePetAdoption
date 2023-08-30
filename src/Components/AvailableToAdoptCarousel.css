@@ -1,0 +1,26 @@
+.carousel-caption {
+    position: relative;
+}
+
+.animalName {
+    color: #42cbd9;
+    font-weight: 700;
+    font-size: 31px;
+    text-shadow: -4px 3px 6px #a5a0ac;
+    position: absolute;
+    left: 35%;
+    /* bottom: 0%; */
+    bottom: 97%;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 400px;
+}
+
+.carousel-indicators {
+    bottom: 64px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    height: 50px;
+    top: 30%;
+}

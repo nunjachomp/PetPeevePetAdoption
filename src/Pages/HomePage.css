@@ -1,0 +1,19 @@
+.appItemsContainer {
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+    height: 100vh;
+}
+
+.carousel-item {
+    width: 400px;
+    height: 370px;
+}
+
+.warningText {
+    color: rgb(183, 226, 226); 
+    font-weight: 500;
+}
+
+.warning {
+    width: 50px;
+}

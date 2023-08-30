@@ -1,0 +1,11 @@
+.backgroundPhotoContainer {
+    position: relative;
+    background-image: url(../Images/Backgrounds/AutumnCave.JPG);
+    background-attachment: fixed;
+    background-size: 100vw 120vh;
+    background-position: 60% 40%;
+}
+
+.petsAvail {
+    padding-top: 6rem;
+}

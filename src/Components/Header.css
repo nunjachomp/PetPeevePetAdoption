@@ -1,0 +1,202 @@
+.header {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    margin: 15px, 15px, 0, 0;
+    z-index: 10; 
+}
+
+.headerLogo {
+    position: absolute;
+    left: 10px;
+    height: 24px;
+    width: 100px;
+}
+
+.mainLogo{
+    width: 125px;
+}
+
+.header_center {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    min-width: 600px;
+    color:#faa721;
+    font-weight: 500;
+    font-size: 18px;
+    background-color: #00000087;
+    border-radius: 2rem;
+}
+
+.home, .login, .signup {
+    text-decoration: none;
+    color: #faa721;
+}
+
+.header_center > li {
+    list-style-type: none;
+    margin: 10px;
+}
+
+.headerRight {
+    position: absolute;
+    right: 50px;
+    top: 13px;
+    color: #faa721;
+    font-weight: 500;
+    background-color: #00000087;
+    border-radius: 2rem;
+    width: 110px;
+    text-align: center;
+}
+
+.buttonLeftContainer, .buttonRightContainer {
+    position: absolute;
+    height: 48px;
+    width: 256px;
+    top: 86%;
+    background-color: rgba(23, 26, 32, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 180px;
+    opacity: 0.85;
+}
+
+.buttonLeftContainer {
+    left: 38%;
+    transform: translateX(-50%);
+}
+
+.buttonRightContainer {
+    right: 38%;
+    transform: translateX(50%);
+}
+
+.buttonLeft, .buttonRight {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.downArrow {
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    width: 30px;
+    transform: translateX(-50%);
+}
+
+.outerSignUpContainer2 {
+    background-image: url(../Images/Backgrounds/GrandCanyon.JPG);
+    background-size: 50vw 50vh;
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signUpContainer2 {
+    display: flex;
+    width: 42%;
+    height: 216px;
+    position: absolute;
+    border-radius: 0.5rem;
+    box-shadow: 1px 3px 15px 1px rgb(121 121 121 / 100%);
+    background-color: rgb(61 111 123 / 85%);
+    margin-bottom: 1rem;
+    margin-top: 11rem;
+    left: 50%;
+    top: -32%;
+    transform: translate(-50%, 0%);
+}
+
+.signUpText2 {
+    position: absolute;
+    top: -32%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 26px;
+    color: #ffb01b;
+    text-shadow: black 3px 0 3px;
+    width: 300px;
+    text-align: center;
+}
+
+.signUpInputBox2 {
+    width: 95%;
+    height: 84%;
+    position: absolute;
+    top: 7%;
+    left: 2.5%;
+    color: black;
+    border-radius: 0.5rem;
+    background-color: rgb(23 31 37 / 60%);
+    color: white;
+    text-align: center;
+    border-color: #f7a927;
+}
+
+.signUpUserName2 {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.signUpPassword2 {
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.signUpButton2 {
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 14px;
+    font-weight: 700;
+    width: 190px;
+    border-radius: 2rem;
+    background-color: #ffc107;
+    color: #f10707f7;
+}
+
+.reminder2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    font-size: 11px;
+}
+
+.button {
+    position: absolute;
+    top: 75%;
+    left: 25%;
+}
+
+/* .ReactModal__Content, .ReactModal__Content--after-open {
+    position: absolute; 
+    width: 480px;
+    height: 309px;
+    left: 50%;
+    top: 24%;
+    transform: translateX(-50%);
+} */

@@ -1,0 +1,30 @@
+.sendContainer {
+    padding: 3rem;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../Images/Backgrounds/SerenneSnow.JPG);
+    background-attachment: fixed;
+    background-size: 100vw;
+    background-position: 60% 40%;
+}
+
+.sendPetAwayForm {
+    margin-top: 2rem;
+    background-color: rgb(51 142 175 / 81%);
+    border: 2px solid #0000001c;
+    box-shadow: rgba(7, 48, 46, 0.7) 6px 5px 6px;
+    border-radius: 2rem;
+    width: 50vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem;
+    color: white;
+}
+
+input {
+    display: block;
+    width: 90%;
+    background-color: rgb(37 71 30 / 81%);
+}

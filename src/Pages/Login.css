@@ -1,0 +1,99 @@
+.outerLoginContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../Images/Backgrounds/RobbersCave.JPG);
+    background-attachment: fixed;
+    background-size: 100vw;
+}
+
+.loginContainer {
+    display: flex;
+    width: 30%;
+    height: 270px;
+    position: absolute;
+    border-radius: 0.5rem;
+    box-shadow: 1px 3px 15px 1px rgb(121 121 121 / 100%);
+    background-color: rgb(61 111 123 / 85%);
+    margin-bottom: 1rem;
+    margin-top: 11rem;
+    left: 50%;
+    top: 12%;
+    transform: translate(-50%, 0%);
+}
+
+.loginText {
+    position: absolute;
+    top: -1%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 26px;
+    color: rgb(240 181 87);
+}
+
+.loginInputBox {
+    width: 95%;
+    height: 70%;
+    position: absolute;
+    top: 14%;
+    left: 2.5%;
+    color: black;
+    border-radius: 0.5rem;
+    background-color: rgb(23 31 37 / 60%);
+    color: white;
+    text-align: center;
+    border-color: #f7a927;
+}
+
+.loginUserName{
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.loginPassword {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.loginButton {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 14px;
+    font-weight: 700;
+    width: 190px;
+    border-radius: 2rem;
+    background-color: rgb(40 82 101);
+    color: rgb(255 118 72);
+}
+
+.loginButton:hover {
+    color: rgb(255 225 177);
+}
+
+.loginWelcome {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(250 174 50);
+    text-shadow: black 3px 0 4px;
+    width: 500px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+input {
+    background-color: rgb(33 47 42 / 81%);
+}
