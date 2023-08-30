@@ -11,7 +11,7 @@ const PetsContextProvider = ({children}) => {
 
 const fetchAllPets = async () => {
         try {
-          const res = await axios.get('http://localhost:8080/pets', {withCredentials: true})
+          const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/pets`, {withCredentials: true})
           console.log(res.data)
           setPetsList(res.data);
         } catch (err) {
@@ -25,7 +25,7 @@ const fetchAllPets = async () => {
     
       const addNewPet = async (newPet) => {
         try {
-          const res = await axios.post('http://localhost:8080/pets', newPet, {withCredentials: true});
+          const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/pets`, newPet, {withCredentials: true});
           console.log(res.data);
           const newPetsList = [...petsList, res.data];
           setPetsList(newPetsList);
@@ -36,7 +36,7 @@ const fetchAllPets = async () => {
     
       const deletePet = async (petId) => {
         try {
-          const res = await axios.delete(`http://localhost:8080/pets/${petId}`, {withCredentials: true});
+          const res = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}`, {withCredentials: true});
           if (res.data.ok) {
             const revisedPetArray = petsList.filter((pet) => pet.id !== petId);
             setPetsList(revisedPetArray);

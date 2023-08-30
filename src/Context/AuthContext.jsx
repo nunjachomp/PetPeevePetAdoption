@@ -13,7 +13,7 @@ const AuthContextProvider = ({ children }) => {
  const checkStatus = async () => {
     try {
       setIsUserLoading(true);
-      const res = await axios.get('http://localhost:8080/users/check-status', { withCredentials: true });
+      const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/users/check-status`, { withCredentials: true });
       setUser(res.data.userId);
       setIsUserLoading(false);
     } catch (err) {

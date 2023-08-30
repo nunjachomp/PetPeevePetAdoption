@@ -9,7 +9,7 @@ const SinglePet = () => {
 
   const getSinglePet = async() => {
      try {
-      const res = await axios.get(`http://localhost:8080/pets/${id}`)
+      const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/pets/${id}`)
       setPetInfo(res.data)
      }catch(err) {
       console.log(err)
