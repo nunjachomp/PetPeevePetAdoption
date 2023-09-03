@@ -13,12 +13,12 @@ import warning from '../Images/warning.webp'
 import AvailableToAdoptCarousel from '../Components/AvailableToAdoptCarousel';
 
 const HomePage = () => {
-  const { petsList } = useContext(PetsContext);
+  const { petsList, fetchAllPets } = useContext(PetsContext);
   
   return (
     <>
     <div className='appItemsContainer'>
-      <Item title='Adopt a challenged pet!™' slider={<AvailableToAdoptCarousel petsList={petsList} />} background={StormyBeach} />
+      <Item title='Adopt a challenged pet!™' slider={<AvailableToAdoptCarousel petsList={petsList} fetchAllPets={fetchAllPets} />} background={StormyBeach} />
       <Item
       title='About Our Animals'
       text={<div>Our pets have been through a lot. They may not be the prettiest pets, but they have big hearts (sort of)! These animals come from various habitats, ranging from the depths of the Pacific Ocean, to the scorching deserts of Egypt, and on through to the hearts of the Australian Woodlands. <br/><br/>Take your time getting to know your pet of interest's unique temperment and environmental needs. We'll be right here ready to answer any questions you may have!</div>}

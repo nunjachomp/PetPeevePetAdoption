@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./AvailableToAdoptCarousel.css";
 import Carousel from "react-bootstrap/Carousel";
 
-const AvailableToAdoptCarousel = ({ petsList }) => {
-  return (
+const AvailableToAdoptCarousel = ({ petsList, fetchAllPets }) => {
+
+    useEffect(() => {
+      fetchAllPets()
+    },[])
+    
+    return (
     <>
       <Carousel className="carouselContainer">
         {petsList.map((pet) => (

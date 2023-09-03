@@ -9,3 +9,13 @@
 .petsAvail {
     padding-top: 6rem;
 }
+
+.searchBar {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    border-radius: 2rem;
+    text-align: center;
+}

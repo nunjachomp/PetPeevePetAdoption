@@ -18,9 +18,6 @@ const DisplayAllPets = ({ pet }) => {
           <div>
             <p>{pet?.name}</p>
             <p>the {pet?.species}</p>
-            {/* {console.log(pet)}
-            {console.log(pet.petImage)} */}
-
             <img className="petProfilePhoto" src={pet?.petImage} alt="pet" /> 
             <p>{pet.bio}</p>
           </div>

@@ -3,28 +3,19 @@ import './AddYourPetForm.css'
 import { PetsContext } from '../Context/PetContextProvider'
 
 const AddYourPetForm = () => {
-
+  const { addNewPet } = useContext(PetsContext);
 
   const [name, setName] = useState('');
   const [species, setSpecies] = useState('');
   const [petImage, setPetImage] = useState('');
-
-  const { addNewPet } = useContext(PetsContext);
-  
-  // const [simpleClassification, setSimpleClassification] = useState('');
-  // const [adoptionStatus, setAdoptionStatus] = useState('');
-  // const [photoUrl, setPhotoUrl] = useState('');
-  // const [height, setHeight] = useState('');
-  // const [weight, setWeight] = useState('');
-  // const [primaryColor, setPrimaryColor] = useState('');
-  // const [bio, setBio] = useState('');
-  // const [hypoallergenic, setHypoallergenic] = useState('');
-  // const [dietaryRestrictions, setDietaryRestrictions] = useState('');
-
-  // const [petId, setPetId] = useState('');
-  // const [createdDate, setCreatedDate] = useState('');
-  
-  
+  const [simpleClassification, setSimpleClassification] = useState('');
+  const [adoptionStatus, setAdoptionStatus] = useState('');
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
+  const [primaryColor, setPrimaryColor] = useState('');
+  const [bio, setBio] = useState('');
+  const [hypoallergenic, setHypoallergenic] = useState('');
+  const [dietaryRestrictions, setDietaryRestrictions] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault(); 
@@ -34,49 +25,30 @@ const AddYourPetForm = () => {
     newPet.append('name', name)
     newPet.append('species', species)
     newPet.append('petImage', petImage)
+    newPet.append('simple_classification', simpleClassification)
+    newPet.append('adoption_status', adoptionStatus)
+    newPet.append('height', height)
+    newPet.append('weight', weight)
+    newPet.append('primary_color', primaryColor)
+    newPet.append('bio', bio)
+    newPet.append('hypoallergenic', hypoallergenic)
+    newPet.append('dietary_restrictions', dietaryRestrictions)
 
-    // const newPet = {
-    //   name: name,
-    //   species: species,
-
-      // simple_classification: simpleClassification,
-      // adoption_status: adoptionStatus,
-      // photo_url: photoUrl,
-      // height: height,
-      // weight: weight,
-      // primary_color: primaryColor,
-      // bio: bio,
-      // hypoallergenic: hypoallergenic,
-      // dietary_restrictions: dietaryRestrictions,
-      // pet_id: petId,
-      // createdDate: createdDate,
-
-        // pet_image: petImage,
-
-        addNewPet(newPet)
+    addNewPet(newPet)
 
         setName('');
         setSpecies('');
+        setSimpleClassification('');
+        setAdoptionStatus('');
+        setHeight('');
+        setWeight('');
+        setPrimaryColor('');
+        setBio('');
+        setHypoallergenic('');
+        setDietaryRestrictions('');
 
-        
     };
     
-    
-    // setSimpleClassification('');
-    // setAdoptionStatus('');
-    // setPhotoUrl('');
-    // setHeight('');
-    // setWeight('');
-    // setPrimaryColor('');
-    // setBio('');
-    // setHypoallergenic('');
-    // setDietaryRestrictions('');
-    // setPetId('');
-    // setCreatedDate('');
-
-    // setPetImage('');
- 
-
   return (
     <div className='sendContainer'>
     <form className='sendPetAwayForm' onSubmit={handleSubmit}>
@@ -91,22 +63,17 @@ const AddYourPetForm = () => {
           <input type='text' value={species} onChange={(e) => setSpecies(e.target.value)} required />
         </div>
 
-        
         <div className='petimage'>
-          <label>File</label>
+          <label>Photo of your pet!</label>
           <input type='file' onChange={(e) => setPetImage(e.target.files[0])} required />
         </div>
-        {/* <div className='petsimpleClassification'>
+        <div className='petsimpleClassification'>
           <label>Animal Family (i.e. canine, fish, arachnid)</label>
           <input type='text' value={simpleClassification} onChange={(e) => setSimpleClassification(e.target.value)} required />
         </div>
         <div className='petAdoptionStatus'>
           <label>If you really want to send this pet for adoption, type "True"</label>
           <input type='boolean' value={adoptionStatus} onChange={(e) => setAdoptionStatus(e.target.value)} required />
-        </div>
-        <div className='petPhotoUrl'>
-          <label>URL of your pet's photo</label>
-          <input type='text' value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} required />
         </div>
         <div className='petHeight'>
           <label>How tall is your pet?</label>
@@ -131,17 +98,7 @@ const AddYourPetForm = () => {
         <div className='petDietaryRestrictions'>
           <label>Does your pet have special dietary needs or restrictions?</label>
           <input type='text' value={dietaryRestrictions} onChange={(e) => setDietaryRestrictions(e.target.value)} required />
-        </div> */}
-        
-        {/* <div className='petId'>
-          <label>ID?</label>
-          <input type='text' value={petId} onChange={(e) => setPetId(e.target.value)} required />
         </div>
-        <div className='petDate'>
-          <label>Date Created</label>
-          <input type='text' value={createdDate} onChange={(e) => setCreatedDate(e.target.value)} required />
-        </div> */}
-
 
       </div>
       <button variant='primary' type='submit' className='AddBtn'>
