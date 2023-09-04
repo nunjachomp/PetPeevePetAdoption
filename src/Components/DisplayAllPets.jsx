@@ -13,13 +13,14 @@ const DisplayAllPets = ({ pet }) => {
 
   return (
     <>
-        <div className='PetContainer' style={{cursor: 'pointer'}} onClick={() => navigate(`/pet/${pet.id}`) }>
+        <div className='PetContainer'>
           <span className='hiddenDelete' onClick={handleDeletePet}>*</span>
           <div>
             <p>{pet?.name}</p>
             <p>the {pet?.species}</p>
             <img className="petProfilePhoto" src={pet?.petImage} alt="pet" /> 
             <p>{pet.bio}</p>
+            <button style={{cursor: 'pointer'}} onClick={() => navigate(`/pet/${pet.id}`) }>See More</button>
           </div>
         </div>
     </>

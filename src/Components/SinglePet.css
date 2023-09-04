@@ -1,0 +1,17 @@
+.outerIndividualPet {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.individualPetProfileContainer {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.individualPetPhoto {
+    width: 400px;
+}
