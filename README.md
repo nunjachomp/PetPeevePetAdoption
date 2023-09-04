@@ -1,4 +1,4 @@
-# Pet_Adopt_FE
+# PetPeeve: Finding Homes For Challenged Pets!
 
 Hello and welcome to the github repository for PetPeeve! 
 We are a pet adoption agency that specializes in taking care of and adopting out pets that are not your traditional cats and dogs; 
