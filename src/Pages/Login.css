@@ -24,19 +24,26 @@
 
 .loginText {
     position: absolute;
-    top: -1%;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
     font-weight: 700;
-    font-size: 26px;
+    font-size: 18px;
+    width: 300px;
+    text-align: center;
     color: rgb(240 181 87);
+}
+
+.signUp {
+    color: #97f0f5;
+    text-decoration: none;
 }
 
 .loginInputBox {
     width: 95%;
     height: 70%;
     position: absolute;
-    top: 14%;
+    top: 17%;
     left: 2.5%;
     color: black;
     border-radius: 0.5rem;
@@ -46,27 +53,52 @@
     border-color: #f7a927;
 }
 
-.loginUserName{
+/* .loginUserName{
     position: absolute;
     top: 12%;
     left: 50%;
     transform: translate(-50%, 0%);
     border-radius: 2rem;
     text-align: center;
-}
+} */
 
-.loginPassword {
+.loginEmail {
     position: absolute;
-    top: 35%;
+    top: 17%;
     left: 50%;
     transform: translate(-50%, 0%);
     border-radius: 2rem;
     text-align: center;
 }
 
+.emailText {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
+.loginPassword {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.passwordText {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
 .loginButton {
     position: absolute;
-    top: 65%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, 0%);
     font-size: 14px;

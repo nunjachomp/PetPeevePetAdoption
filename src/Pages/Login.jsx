@@ -30,9 +30,11 @@ const Login = () => {
     <form className="outerLoginContainer" onSubmit={handleLogin}>
       <div className="loginWelcome">Welcome to Pet Peeve™! <br/>Where you can bring joy to a troubled pet!</div>
       <div className="loginContainer">
-        <div className="loginText">Sign In or <Link to='/signup'>Sign Up</Link></div>
+        <div className="loginText">Sign In or <Link to='/signup' className="signUp">Sign Up</Link></div>
         <div className="loginInputBox">
-          <input type="email" className="loginEmail" placeholder="email@mail.com" value={email} onChange={e => setEmail(e.target.value)}></input>
+        <div className='emailText'>Email</div>
+          <input type="email" className="loginEmail" placeholder="name@email.com" value={email} onChange={e => setEmail(e.target.value)}></input>
+          <div className='passwordText'>Password</div>
           <input type="password" className="loginPassword" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}></input>
           <button className="loginButton">Enter!</button>
         </div>

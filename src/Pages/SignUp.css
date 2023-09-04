@@ -11,13 +11,13 @@
 .signUpContainer {
     display: flex;
     width: 30%;
-    height: 270px;
+    height: 290px;
     position: absolute;
     border-radius: 0.5rem;
     box-shadow: 1px 3px 15px 1px rgb(121 121 121 / 100%);
     background-color: rgb(61 111 123 / 85%);
     margin-bottom: 1rem;
-    margin-top: 11rem;
+    margin-top: 9rem;
     left: 50%;
     top: 8%;
     transform: translate(-50%, 0%);
@@ -25,7 +25,7 @@
 
 .signUpText {
     position: absolute;
-    top: -32%;
+    top: -22%;
     left: 50%;
     transform: translateX(-50%);
     font-weight: 700;
@@ -38,9 +38,9 @@
 
 .signUpInputBox {
     width: 95%;
-    height: 70%;
+    height: 96%;
     position: absolute;
-    top: 14%;
+    top: 2%;
     left: 2.5%;
     color: black;
     border-radius: 0.5rem;
@@ -50,27 +50,79 @@
     border-color: #f7a927;
 }
 
-.signUpUserName{
+.signUpName{
     position: absolute;
-    top: 12%;
+    top: 9%;
     left: 50%;
     transform: translate(-50%, 0%);
     border-radius: 2rem;
+    text-align: center;
+}
+
+.name {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
+.signUpEmail {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.email {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0%);
     text-align: center;
 }
 
 .signUpPassword {
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
     border-radius: 2rem;
     text-align: center;
 }
 
+.password {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;  
+    width: 250px;
+}
+
+.signupRepassword {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.rePassword {
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;  
+    width: 250px;
+}
+
 .signUpButton {
     position: absolute;
-    top: 65%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, 0%);
     font-size: 14px;
@@ -81,10 +133,3 @@
     color: #f10707f7;
 }
 
-.reminder {
-    position: absolute;
-    top: 51%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-}
