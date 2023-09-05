@@ -21,6 +21,20 @@ const SinglePet = () => {
     getSinglePet()
   }, [])
 
+  const adoptPet = async(e) => {
+    let res
+    try{
+      if (e.target.id == 'adopt') {
+      res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${id}/adopt`, {adopt: true}, {withCredentials: true})
+      } else if (e.target.id == 'unadopt') {
+      res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${id}/adopt`, {adopt: false}, {withCredentials: true})
+      }
+      setPetInfo(res.data)
+    }catch(err){
+      console.log(err)
+    }
+  }
+
   return (
     <div className='outerIndividualPet'>
       <div className='individualPetProfileContainer'>
@@ -34,6 +48,10 @@ const SinglePet = () => {
         <p>Hypoallergenic: {petInfo.hypoallergenic}</p>
         <p>Bio: {petInfo.bio}</p>
         <p>Dietary Needs: {petInfo.dietary_restrictions}</p>
+        <button id='adopt' onClick={adoptPet}>Adopt</button>
+        <button id='unadopt' onClick={adoptPet}>Unadopt</button>
+        <button>Foster</button>
+        <button>Release Pokemon</button>
       </div>
     </div>
   )

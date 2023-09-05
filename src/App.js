@@ -10,6 +10,7 @@ import PetsContextProvider from './Context/PetContextProvider';
 import AuthContextProvider from './Context/AuthContext';
 import PrivateRoute from './Components/PrivateRoute';
 import SinglePet from './Components/SinglePet';
+import AdminDashboard from "./Pages/AdminDashboard";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/sendPet" element={<AddYourPetForm />} />
           <Route path="/allAdoptablePets" element={<PrivateRoute><PetsCurrentlyAvailable /></PrivateRoute>} />
           <Route path='/pet/:id' element={<SinglePet/>} />
+          <Route path='/admin' element={<AdminDashboard/>} />
         </Routes>
       </PetsContextProvider>
     </AuthContextProvider>
