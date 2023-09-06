@@ -1,0 +1,62 @@
+.adminDashboardContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.adminTitle {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.displayAllUsersAdmin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 858px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  
+  .column {
+    background-color: #f0f0f0;
+  }
+
+.userName {
+    width: 210px;
+    overflow: auto;
+}
+
+.userEmail {
+    width: 288px;
+    overflow: auto;
+}
+
+.userSince {
+    width: 200px;
+}
+
+.isAdmin {
+    width: 24px;
+}
+
+.toggleButton {
+    width: 90px;
+}
+
+.powerUpButton {
+    height: 23px;
+    width: 76px;
+    font-size: 10px;
+    border-radius: 2rem;
+    transform: translate(9%, -7%);
+}
+
+  

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
+import './AdminDashboard.css'
 
 export const AdminDashboard = () => {
   const [usersList, setUsersList] = useState([])
@@ -24,17 +25,27 @@ export const AdminDashboard = () => {
 
   return (
     <>
-      <br /><br /><br /><br /><br />
-      <div>AdminDashboard</div>
+      <div className="adminDashboardContainer">
       {/* Need to return confirmation to client */}
-      <br /><br /><br /><br />
-      <div>
+      <h1 className="adminTitle">Admin Dashboard</h1>
+      <div className="displayAllUsersAdmin">
       {usersList.length > 0 ? (
-       usersList.map((user) => <div key={user.id}>{user.name} {user.email} {user.isAdmin}
-       <button onClick={() => toggleAdmin(user.id)}>Make Admin</button></div>)
+       usersList.map((user) => <div key={user.id}>
+      <div class="grid">
+      <div class="column userName">{user.name}</div>
+      <div class="column userEmail">{user.email}</div>
+      <div class="column userSince">{user.createdDate}</div>
+      <div class="column isAdmin">{user.isAdmin}</div>
+      <div class="column toggleButton"><button className='powerUpButton' onClick={() => toggleAdmin(user.id)}>Make Admin</button></div>
+</div>
+       
+       </div>
+       
+       )
      ) : (
        <div>Loading...</div>
      )}
+      </div>
       </div>
     </>
   );
