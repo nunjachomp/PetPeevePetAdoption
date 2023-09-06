@@ -12,7 +12,6 @@ const PetsContextProvider = ({children}) => {
 const fetchAllPets = async () => {
         try {
           const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/pets`, {withCredentials: true})
-          console.log(res.data)
           setPetsList(res.data);
         } catch (err) {
           console.log(err);

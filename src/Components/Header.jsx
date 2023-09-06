@@ -36,8 +36,8 @@ const Header = () => {
         <li>Search</li>
         <li>Donate</li>
         <li><NavLink to="/signup" className="signup">Sign Up</NavLink></li>
-        {/* <li><NavLink to="/home" className="signup" onClick={() => setIsModalOpen(true)}>Sign Up</NavLink></li> Signup Modal */}
         <li><NavLink to="/" className="login">Login</NavLink></li>
+        <li><NavLink to="/admin" className="admin">Admin</NavLink></li>
       </ul>
       <div className="headerRight"> Testimonials </div>
     </nav>

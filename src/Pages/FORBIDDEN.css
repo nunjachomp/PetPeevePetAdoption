@@ -1,0 +1,15 @@
+.forbiddenContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.forbidden {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}

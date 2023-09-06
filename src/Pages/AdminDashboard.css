@@ -1,5 +1,8 @@
 .adminDashboardContainer {
     position: relative;
+    background-image: url('../Images/Backgrounds/Vault.png');
+    background-attachment: fixed;
+    background-size: 100vw 120vh;
     width: 100vw;
     height: 100vh;
 }
@@ -9,6 +12,8 @@
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
+    color: #a4dfd5;
+    text-shadow: #3f1483 1px 0 10px;
 }
 
 .displayAllUsersAdmin {
@@ -22,16 +27,36 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    /* gap: 10px; */
   }
   
+  @keyframes oscillate {
+    0% {
+      color: rgb(255 155 0);
+    }
+    50% {
+      color: rgb(0 255 245);
+    }
+    100% {
+      color: rgb(255 155 0);
+    }
+  }
+
+  .column:hover {
+    animation: oscillate 2s linear infinite;
+    font-size: 18px;
+  }
+
   .column {
-    background-color: #f0f0f0;
+    background-color: #5d9c9f6b;
+    color: white;
+    text-shadow: #14832c 1px 0 10px;
   }
 
 .userName {
     width: 210px;
     overflow: auto;
+    padding-left: 1rem;
 }
 
 .userEmail {
@@ -40,11 +65,14 @@
 }
 
 .userSince {
-    width: 200px;
+    width: 220px;
+    text-align: center;
 }
 
 .isAdmin {
-    width: 24px;
+    width: 70px;
+    text-align: center;
+    padding-left: 0.5rem;
 }
 
 .toggleButton {
@@ -59,4 +87,6 @@
     transform: translate(9%, -7%);
 }
 
-  
+.powerUpButton:hover {
+    background-color: red;
+}

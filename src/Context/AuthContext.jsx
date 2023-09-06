@@ -6,6 +6,8 @@ const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState('');
   const [isUserLoading, setIsUserLoading] = useState(true);
 
+  // const [usersList, setUsersList] = useState([]);
+
   useEffect(() => {
     checkStatus();
   }, []);
@@ -22,7 +24,20 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
+  // const showAllUsers = async () => {
+  //   try {
+  //     const res = await axios.get(
+  //       `${process.env.REACT_APP_SERVER_URL}/users/`,
+  //       { withCredentials: true }
+  //     );
+  //     setUsersList(res.data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
   return <AuthContext.Provider value={{ user, setUser, checkStatus, isUserLoading }}>{children}</AuthContext.Provider>;
+  // return <AuthContext.Provider value={{ user, setUser, checkStatus, isUserLoading, showAllUsers, usersList, setUsersList }}>{children}</AuthContext.Provider>;
 };
 
 export { AuthContext };

@@ -11,6 +11,8 @@ import AuthContextProvider from './Context/AuthContext';
 import PrivateRoute from './Components/PrivateRoute';
 import SinglePet from './Components/SinglePet';
 import AdminDashboard from "./Pages/AdminDashboard";
+// import PrivateRouteAdmin from "./Components/PrivateRouteAdmin";
+import FORBIDDEN from "./Pages/FORBIDDEN";
 
 function App() {
 
@@ -22,11 +24,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/sendPet" element={<AddYourPetForm />} />
+          <Route path="/home" element={<PrivateRoute><HomePage /></PrivateRoute>} />
+          <Route path="/sendPet" element={<PrivateRoute><AddYourPetForm /></PrivateRoute>} />
           <Route path="/allAdoptablePets" element={<PrivateRoute><PetsCurrentlyAvailable /></PrivateRoute>} />
-          <Route path='/pet/:id' element={<SinglePet/>} />
-          <Route path='/admin' element={<AdminDashboard/>} />
+          <Route path='/pet/:id' element={<PrivateRoute><SinglePet/></PrivateRoute>} />
+          <Route path='/admin' element={<PrivateRoute><AdminDashboard/></PrivateRoute>} />
+          {/* <Route path='/admin' element={<PrivateRouteAdmin><AdminDashboard/></PrivateRouteAdmin>} /> */}
+          <Route path='/FORBIDDEN' element={<FORBIDDEN/>} />
         </Routes>
       </PetsContextProvider>
     </AuthContextProvider>
