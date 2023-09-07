@@ -1,21 +1,36 @@
-// import { useContext } from 'react'
-// import { AuthContext } from '../Context/AuthContext'
-// import { Navigate } from 'react-router-dom'
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import { Navigate } from "react-router-dom";
 
-// const PrivateRouteAdmin = ({children}) => {
-//   const {user, isUserLoading, usersList} = useContext(AuthContext)
- 
-//   const mappedUsers = usersList.map((user) => (
-//     <div>key={user.Id} user={user}</div>))
+const PrivateRouteAdmin = ({ render }) => {
+  const { user, isUserLoading, showAllUsers, usersList } = useContext(AuthContext);
 
+  console.log("Current userId: ", user); // displays: 1
+  const loggedInUserId = user;
 
-//   if(isUserLoading) {
-//     return <h1>Loading....</h1>
-//   }
-  
-//   return (
-//     <div>{user.isAdmin === 1 ? children : <Navigate to='/FORBIDDEN'/>}</div>
-//   )
-// }
+  useEffect(() => {
+    showAllUsers();
+  }, []);
 
-// export default PrivateRouteAdmin;
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    usersList.forEach((user) => {
+      console.log("UserId: ", user.id, "Is Admin?", user.isAdmin); // displays 1 and 0 for each user
+      if (loggedInUserId === user.id) 
+      setIsAdmin(user.isAdmin === 1 ? 1 : 0);
+    });
+  }, []);
+
+  if (isUserLoading) {
+    return <h1>Loading....</h1>;
+  }
+
+  return (
+    <>
+      <div>{render(isAdmin)}</div>
+    </>
+  );
+};
+
+export default PrivateRouteAdmin;

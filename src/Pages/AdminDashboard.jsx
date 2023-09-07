@@ -1,26 +1,13 @@
 import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
 import "./AdminDashboard.css";
-// import { AuthContext } from "../Context/AuthContext";
+import { AuthContext } from "../Context/AuthContext";
 
 export const AdminDashboard = () => {
 
-  // const {showAllUsers, usersList} = useContext(AuthContext)
+  const {showAllUsers, usersList} = useContext(AuthContext)
 
-  const [usersList, setUsersList] = useState([]);
   const [rerender, setRender] = useState("");
-
-  const showAllUsers = async () => {
-    try {
-      const res = await axios.get(
-        `${process.env.REACT_APP_SERVER_URL}/users/`,
-        { withCredentials: true }
-      );
-      setUsersList(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   useEffect(() => {
     showAllUsers();

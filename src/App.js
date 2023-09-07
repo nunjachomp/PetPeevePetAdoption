@@ -11,7 +11,7 @@ import AuthContextProvider from './Context/AuthContext';
 import PrivateRoute from './Components/PrivateRoute';
 import SinglePet from './Components/SinglePet';
 import AdminDashboard from "./Pages/AdminDashboard";
-// import PrivateRouteAdmin from "./Components/PrivateRouteAdmin";
+import PrivateRouteAdmin from "./Components/PrivateRouteAdmin";
 import FORBIDDEN from "./Pages/FORBIDDEN";
 
 function App() {
@@ -28,9 +28,7 @@ function App() {
           <Route path="/sendPet" element={<PrivateRoute><AddYourPetForm /></PrivateRoute>} />
           <Route path="/allAdoptablePets" element={<PrivateRoute><PetsCurrentlyAvailable /></PrivateRoute>} />
           <Route path='/pet/:id' element={<PrivateRoute><SinglePet/></PrivateRoute>} />
-          <Route path='/admin' element={<PrivateRoute><AdminDashboard/></PrivateRoute>} />
-          {/* <Route path='/admin' element={<PrivateRouteAdmin><AdminDashboard/></PrivateRouteAdmin>} /> */}
-          <Route path='/FORBIDDEN' element={<FORBIDDEN/>} />
+          <Route path='/admin' element={<PrivateRouteAdmin render={(isAdmin)=>(isAdmin ? <AdminDashboard/> : <FORBIDDEN/>)} />} />
         </Routes>
       </PetsContextProvider>
     </AuthContextProvider>
