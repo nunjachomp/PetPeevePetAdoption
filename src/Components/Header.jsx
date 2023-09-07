@@ -34,7 +34,7 @@ const Header = () => {
       <ul className="header_center">
         <li><NavLink to="/home" className="home">Home</NavLink></li>
         <li>Search</li>
-        <li>Donate</li>
+        <li><NavLink to='/user/:id/' className="admin">My Pets</NavLink></li>
         <li><NavLink to="/signup" className="signup">Sign Up</NavLink></li>
         <li><NavLink to="/" className="login">Login</NavLink></li>
         <li><NavLink to="/admin" className="admin">Admin</NavLink></li>

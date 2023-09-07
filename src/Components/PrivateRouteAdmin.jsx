@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import { Navigate } from "react-router-dom";
 
 const PrivateRouteAdmin = ({ render }) => {
   const { user, isUserLoading, showAllUsers, usersList } = useContext(AuthContext);

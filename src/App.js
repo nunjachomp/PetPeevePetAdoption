@@ -13,6 +13,7 @@ import SinglePet from './Components/SinglePet';
 import AdminDashboard from "./Pages/AdminDashboard";
 import PrivateRouteAdmin from "./Components/PrivateRouteAdmin";
 import FORBIDDEN from "./Pages/FORBIDDEN";
+import MyPets from "./Pages/MyPets";
 
 function App() {
 
@@ -25,9 +26,10 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/home" element={<PrivateRoute><HomePage /></PrivateRoute>} />
-          <Route path="/sendPet" element={<PrivateRoute><AddYourPetForm /></PrivateRoute>} />
+          <Route path="/sendPet" element={<PrivateRouteAdmin render={(isAdmin)=>(isAdmin ? <AddYourPetForm /> : <FORBIDDEN/>)} />} />
           <Route path="/allAdoptablePets" element={<PrivateRoute><PetsCurrentlyAvailable /></PrivateRoute>} />
           <Route path='/pet/:id' element={<PrivateRoute><SinglePet/></PrivateRoute>} />
+          <Route path='/user/:id/' element={<MyPets/>} />
           <Route path='/admin' element={<PrivateRouteAdmin render={(isAdmin)=>(isAdmin ? <AdminDashboard/> : <FORBIDDEN/>)} />} />
         </Routes>
       </PetsContextProvider>
