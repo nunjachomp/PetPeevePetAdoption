@@ -20,7 +20,7 @@ const PetsCurrentlyAvailable = () => {
       animal.simple_classification.toLowerCase().includes(value.toLowerCase()) ||
       animal.primary_color.toLowerCase().includes(value.toLowerCase()) ||
       animal.bio.toLowerCase().includes(value.toLowerCase())
-    )
+    ).filter(pet => pet.adoptedById == null)
     setSearchQuery(newSearch)
   }
 
