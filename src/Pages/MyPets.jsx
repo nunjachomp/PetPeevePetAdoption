@@ -9,7 +9,8 @@ const MyPets = () => {
   const { user } = useContext(AuthContext)
   // console.log(petsList)
   // console.log(user)
-  
+  const [rerender, setRerender] = useState([]);
+
   useEffect(() => {
     fetchAllPets()
   }, [])
@@ -26,6 +27,7 @@ const MyPets = () => {
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/adopt`, { adopt: false }, { withCredentials: true });
       console.log('Pet Unadopted Successfully');
+      setRerender(handleUnAdopt)
     } catch (err) {
       console.log(err);
     }
@@ -36,6 +38,7 @@ const MyPets = () => {
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/foster`, { foster: true }, { withCredentials: true });
       console.log('Pet Fostered Successfully');
+      setRerender(handleFoster)
     } catch (err) {
       console.log(err);
     }
@@ -46,14 +49,27 @@ const MyPets = () => {
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/foster`, { foster: false }, { withCredentials: true });
       console.log('Pet Unfostered Successfully');
+      setRerender(handleUnFoster)
     } catch (err) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    fetchAllPets()
+  }, [handleUnAdopt, handleFoster, handleUnFoster])
   
   return (
     <>
-    <div className='test'>My Pets: {userPets.map((pet) => (<div key={pet.id}>{pet.name} <button onClick={() => handleUnAdopt(pet.id)}>UnAdopt</button><button onClick={() => handleFoster(pet.id)}>Foster</button><button onClick={() => handleUnFoster(pet.id)}>Unfoster</button></div>))}</div>
+    <div className='test'>
+      My Pets: {userPets.map((pet) => (<div key={pet.id}> {pet.name}{" "} 
+      {pet.adoptedById ? <button onClick={() => handleUnAdopt(pet.id)}>UnAdopt</button> : null}
+      {pet.adoptedById ? <button onClick={() => handleFoster(pet.id)}>Foster Instead</button> : null}
+      {pet.fosteredById ? <button onClick={() => handleUnFoster(pet.id)}>Unfoster</button> : null}
+    </div>
+  ))}
+</div>
+
     </>
   )
 }
