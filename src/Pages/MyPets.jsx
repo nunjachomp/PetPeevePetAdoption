@@ -20,22 +20,19 @@ const MyPets = () => {
     // console.log(test)
     return pet.adoptedById == user;
   });
-  
 
-  //Need help from SinglePet
   const handleUnAdopt = async (petId) => {
+    let res;
     try {
-      const response = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}`, { adoptedById: null });
-      console.log(response.data);
-      fetchAllPets();
-    } catch (error) {
-      console.error(error);
+      res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/adopt`, { adopt: false }, { withCredentials: true });
+      console.log('Pet Unadopted Successfully');
+    } catch (err) {
+      console.log(err);
     }
   };
-
+  
   return (
     <>
-    {/* {console.log(userPets)} */}
     <div className='test'>My Pets: {userPets.map((pet) => (<div key={pet.id}>{pet.name} <button onClick={() => handleUnAdopt(pet.id)}>UnAdopt</button></div>))}</div>
     </>
   )

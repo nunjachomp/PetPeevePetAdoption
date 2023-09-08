@@ -6,7 +6,7 @@ import { PetsContext } from '../Context/PetContextProvider'
 
 const PetsCurrentlyAvailable = () => {
   const { petsList, fetchAllPets } = useContext(PetsContext);
-  const [searchQuery, setSearchQuery] = useState(petsList)
+  const [searchQuery, setSearchQuery] = useState(petsList.filter(pet => pet.adoptedById == null))
 
   useEffect(() =>{
     fetchAllPets()
