@@ -6,7 +6,7 @@ import { PetsContext } from '../Context/PetContextProvider'
 
 const PetsCurrentlyAvailable = () => {
   const { petsList, fetchAllPets } = useContext(PetsContext);
-  const [searchQuery, setSearchQuery] = useState(petsList.filter(pet => pet.adoptedById == null))
+  const [searchQuery, setSearchQuery] = useState(petsList.filter(pet => pet.adoptedById == null && pet.fosteredById == null))
 
   useEffect(() =>{
     fetchAllPets()
@@ -20,7 +20,7 @@ const PetsCurrentlyAvailable = () => {
       animal.simple_classification.toLowerCase().includes(value.toLowerCase()) ||
       animal.primary_color.toLowerCase().includes(value.toLowerCase()) ||
       animal.bio.toLowerCase().includes(value.toLowerCase())
-    ).filter(pet => pet.adoptedById == null)
+    ).filter(pet => pet.adoptedById == null && pet.fosteredById == null)
     setSearchQuery(newSearch)
   }
 
