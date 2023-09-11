@@ -7,6 +7,7 @@ import './SinglePet.css'
 const SinglePet = () => {
   const [petInfo, setPetInfo] = useState({})
   const [savedPet, setSavedPet] = useState([])
+  const [isSaved, setIsSaved] = useState(false);
 
   const {id} = useParams()
   const {user} = useContext(AuthContext)
@@ -38,12 +39,25 @@ const SinglePet = () => {
     }
   }
 
-  const savePet = async() => {
+  const savePet = async(e) => {
     let res
     try {
       res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: parseInt(id), userId: user}, {withCredentials: true})
       console.log(res.data)
       setSavedPet(res.data)
+      setIsSaved(true)
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+  const unSavePet = async(e) => {
+    let res
+    try {
+      res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: null, userId: null}, {withCredentials: true})  
+      console.log(res.data)
+      setSavedPet(res.data)
+      setIsSaved(false)
     } catch(err) {
       console.log(err)
     }
@@ -64,7 +78,9 @@ const SinglePet = () => {
         <p>Dietary Needs: {petInfo.dietary_restrictions}</p>
         <button id='adopt' onClick={adoptPet}>Adopt</button>
         {/* <button id='unadopt' onClick={adoptPet}>Unadopt</button> */}
-        <button id='saved' onClick={savePet}>Save For Later</button>
+        {isSaved == false ? (
+        <button id='saved' onClick={savePet}>Save For Later</button> ) : (
+        <button id='unsaved' onClick={unSavePet}>Unsave For Later</button>)}
      
       </div>
     </div>
