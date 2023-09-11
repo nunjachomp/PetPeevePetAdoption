@@ -62,7 +62,8 @@ const MyPets = () => {
   return (
     <>
     <div className='test'>
-      My Pets: {userPets.map((pet) => (<div key={pet.id}> {pet.name}{" "} 
+      My Pets: {userPets.map((pet) => (<div key={pet.id}> 
+      <img className="petPho" src={pet?.petImage} alt="pet" style={{width: '200px'}} />{pet.name}{" "} 
       {pet.adoptedById ? <button onClick={() => handleUnAdopt(pet.id)}>UnAdopt</button> : null}
       {pet.adoptedById ? <button onClick={() => handleFoster(pet.id)}>Foster Instead</button> : null}
       {pet.fosteredById ? <button onClick={() => handleUnFoster(pet.id)}>Unfoster</button> : null}
