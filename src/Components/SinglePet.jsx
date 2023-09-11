@@ -38,11 +38,10 @@ const SinglePet = () => {
     }
   }
 
-  const savePet = async(e) => {
+  const savePet = async() => {
     let res
     try {
-      if (e.target.id == 'saved') 
-      res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/${id}/save`, {petId: id, userId: user}, {withCredentials: true})
+      res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: parseInt(id), userId: user}, {withCredentials: true})
       console.log(res.data)
       setSavedPet(res.data)
     } catch(err) {
