@@ -38,7 +38,7 @@ const HomePage = () => {
       <br />The people at PetPeeve really have a lot of experience caring for animals of all kinds. They really have a way of highlighting the best traits in every pet. I really love Penne my Pangolin! - <span className='testimonialName'>Brundle McBrundleson</span></div>}
       background={CoralReef} />
 
-      <Item title={<div className='aboutUsTitle'>Testimonials</div>} text={<div className='aboutUs'>
+      <Item title={<div className='aboutUsTitle'>About Us</div>} text={<div className='aboutUs'>
         At PetPeeve, we believe every pet deserves a loving home. Our mission is to provide a safe and nurturing environment for these pets, where they can thrive and be loved. Our team of dedicated professionals works tirelessly to rehabilitate and train these pets, ensuring that they are ready for adoption and can become beloved members of their new families.<br/><br />Our adoption process is thorough and comprehensive, designed to ensure that each pet is matched with the right owner. We provide support and guidance throughout the process, offering resources and advice to help both pets and owners adjust to their new lives together.<br/><br/>By adopting a troubled pet from PetPeeve, you are giving a second chance to a deserving animal. If you are interested in adopting a pet from PetPeeve, we encourage you to browse our available pets and contact us for more information. </div>} background={AnzaBorrego} />
     </div>
     </>
