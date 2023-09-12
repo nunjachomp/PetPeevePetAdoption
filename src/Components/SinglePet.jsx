@@ -2,12 +2,14 @@ import axios from 'axios'
 import {useState, useEffect, useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import { AuthContext } from '../Context/AuthContext'
+import { useNavigate } from 'react-router-dom';
 import './SinglePet.css'
 
 const SinglePet = () => {
   const [petInfo, setPetInfo] = useState({})
   const [savedPet, setSavedPet] = useState([])
   const [isSaved, setIsSaved] = useState(false);
+  const navigate = useNavigate()
 
   const {id} = useParams()
   const {user} = useContext(AuthContext)
@@ -34,6 +36,7 @@ const SinglePet = () => {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${id}/adopt`, {adopt: false}, {withCredentials: true})
       }
       setPetInfo(res.data)
+      navigate(`/user/:id/`)
     }catch(err){
       console.log(err)
     }
@@ -62,6 +65,15 @@ const SinglePet = () => {
       console.log(err)
     }
   }
+ 
+  // const getSavedPets = async() => {
+  //   try {
+  //   res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/adoption/save`)  
+  //   console.log(res.data)
+  //   } catch(err) {
+  //     console.log(err)
+  //   }
+  // }
 
   return (
     <div className='outerIndividualPet'>

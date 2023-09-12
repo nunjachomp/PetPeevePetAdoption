@@ -7,18 +7,14 @@ import { PetsContext } from '../Context/PetContextProvider';
 const MyPets = () => {
   const { petsList, fetchAllPets } = useContext(PetsContext)
   const { user } = useContext(AuthContext)
-  // console.log(petsList)
-  // console.log(user)
-  const [rerender, setRerender] = useState([]);
+  const [rerender, setRerender] = useState(0);
 
   useEffect(() => {
     fetchAllPets()
-  }, [])
+  }, [rerender])
 
   const userPets = petsList.filter((pet) => {
-    // console.log(pet.adoptedById);
     const test = (pet.adoptedById == user);
-    // console.log(test)
     return pet.adoptedById == user || pet.fosteredById == user;
   });
 
@@ -27,7 +23,7 @@ const MyPets = () => {
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/adopt`, { adopt: false }, { withCredentials: true });
       console.log('Pet Unadopted Successfully');
-      setRerender(handleUnAdopt)
+      setRerender(Math.random())
     } catch (err) {
       console.log(err);
     }
@@ -38,7 +34,7 @@ const MyPets = () => {
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/foster`, { foster: true }, { withCredentials: true });
       console.log('Pet Fostered Successfully');
-      setRerender(handleFoster)
+      setRerender(Math.random())
     } catch (err) {
       console.log(err);
     }
@@ -49,15 +45,12 @@ const MyPets = () => {
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/foster`, { foster: false }, { withCredentials: true });
       console.log('Pet Unfostered Successfully');
-      setRerender(handleUnFoster)
+      setRerender(Math.random())
     } catch (err) {
       console.log(err);
     }
   };
 
-  useEffect(() => {
-    fetchAllPets()
-  }, [handleUnAdopt, handleFoster, handleUnFoster])
   
   return (
     <>
