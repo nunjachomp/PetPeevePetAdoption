@@ -17,3 +17,27 @@
 .warning {
     width: 50px;
 }
+.testimonialTitle {
+    color: #00ffea;
+}
+
+.testimonialOne {
+    color: #00ffea;
+    text-shadow: #591818 3px 0 3px;
+}
+
+.testimonialName {
+    color: #ffa700;
+}
+
+.aboutUs {
+    color: #ffbc00;
+    font-size: 16px;
+    font-weight: 500;
+    text-shadow: -4px 3px 6px #000000;
+}
+
+.aboutUsTitle {
+    color: #ffbc00;
+    font-weight: 500;
+}

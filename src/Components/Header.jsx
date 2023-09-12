@@ -32,21 +32,23 @@ const Header = () => {
         <img className="mainLogo" src={logo} alt="header" />
       </div>
       <ul className="header_center">
-        <li><NavLink to="/home" className="home">Home</NavLink></li>
-        <li>Search</li>
-        <li><NavLink to='/user/:id/' className="admin">My Pets</NavLink></li>
+        <li><a href="/home#backToTop" className="home"> Home </a></li>
+        <li><NavLink to="/allAdoptablePets" className="search">Search</NavLink></li>
+        <li><NavLink to='/user/:id/' className="myPets">My Pets</NavLink></li>
         <li><NavLink to="/signup" className="signup">Sign Up</NavLink></li>
         <li><NavLink to="/" className="login">Login</NavLink></li>
         <li><NavLink to="/admin" className="admin">Admin</NavLink></li>
       </ul>
-      <div className="headerRight"> Testimonials </div>
+      <a href="/home#testimonials" className="testimonials" style={{ display: isHomePage ? "block" : "none" }}> Testimonials </a>
     </nav>
     <div className="buttonLeftContainer" style={{ display: isHomePage ? "flex" : "none" }}>
       <NavLink to="/allAdoptablePets" className="buttonLeft">Let's Adopt a Pet!</NavLink>
     </div>
-    <img src={downArrow} className='downArrow' style={{ display: isHomePage ? "flex" : "none" }}/>
+    <div className="scrollForMore" style={{ display: isHomePage ? "flex" : "none" }}>Scroll Down To Learn More!
+    <img src={downArrow} className='downArrow' style={{ display: isHomePage ? "flex" : "none" }} />
+    </div>
     <div className="buttonRightContainer" style={{ display: isHomePage ? "flex" : "none" }}>
-      <NavLink to="/sendPet" className="buttonRight">I Need to Send My Pet</NavLink>
+      <NavLink to="/sendPet" className="buttonRight">Admin Portal: Add Pets</NavLink>
     </div>
     {/* <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
       <form className="outerSignUpContainer2" onSubmit={''}>

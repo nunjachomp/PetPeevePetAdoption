@@ -31,7 +31,7 @@
     border-radius: 2rem;
 }
 
-.home, .login, .signup {
+.home, .search, .myPets, .login, .signup, .admin, .testimonials {
     text-decoration: none;
     color: #faa721;
 }
@@ -41,7 +41,7 @@
     margin: 10px;
 }
 
-.headerRight {
+.testimonials {
     position: absolute;
     right: 50px;
     top: 13px;
@@ -57,7 +57,7 @@
     position: absolute;
     height: 48px;
     width: 256px;
-    top: 86%;
+    top: 78%;
     background-color: rgba(23, 26, 32, 0.8);
     display: flex;
     align-items: center;
@@ -86,7 +86,7 @@
 .downArrow {
     position: absolute;
     left: 50%;
-    bottom: 2%;
+    bottom: -106%;
     width: 30px;
     transform: translateX(-50%);
 }
@@ -190,6 +190,16 @@
     position: absolute;
     top: 75%;
     left: 25%;
+}
+
+.scrollForMore {
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+    transform: translateX(-50%);
+    color: #ffb01b;
+    font-weight: bold;
+    text-shadow: -4px 3px 6px #000000;
 }
 
 /* .ReactModal__Content, .ReactModal__Content--after-open {
