@@ -5,7 +5,7 @@ import { AuthContext } from '../Context/AuthContext';
 import { PetsContext } from '../Context/PetContextProvider';
 
 const MyPets = () => {
-  const { petsList, fetchAllPets } = useContext(PetsContext)
+  const { petsList, fetchAllPets, fetchAllSavedPets, savedList } = useContext(PetsContext)
   const { user } = useContext(AuthContext)
   const [rerender, setRerender] = useState(0);
 
@@ -13,9 +13,20 @@ const MyPets = () => {
     fetchAllPets()
   }, [rerender])
 
+  useEffect(() => {
+    fetchAllSavedPets()
+  }, [rerender])
+
   const userPets = petsList.filter((pet) => {
     const test = (pet.adoptedById == user);
+    // console.log(test)
     return pet.adoptedById == user || pet.fosteredById == user;
+  });
+
+  const savedPets = savedList.filter((saved) => {
+    const test = (saved.userId == user && saved.petId !== null);
+    // console.log(test)
+    return saved.userId == user;
   });
 
   const handleUnAdopt = async (petId) => {
@@ -51,7 +62,10 @@ const MyPets = () => {
     }
   };
 
-  
+  const handleUnSave = async () => {
+    console.log(0)
+  }
+
   return (
     <>
     <div className='myPetsContainer'>
@@ -71,12 +85,12 @@ const MyPets = () => {
 
       <div className='saved'>
       <div className='savedTitle'> My Saved Pets: </div>
-      {/* {savedPets.map((saved) => (<div className='myPetsRow' key={saved.id}> 
-      <img className="petPhoto" src={saved?.petImage} alt="pet" style={{width: '200px'}} />
-      <div className='petName'>{pet.name}{" "}</div> 
-      {saved.savedById ? <button className='petButton' onClick={() => handleUnSave(pet.id)}>UnSave</button> : null}
+      {savedPets.map((saved) => (<div className='myPetsRow' key={saved.id}> 
+      <img className="petPhoto" src={saved?.petImage} alt="saved" style={{width: '200px'}} />
+      <div className='petName'>{saved.name}{saved.petId}{" "}</div> 
+      {saved.savedById ? <button className='petButton' onClick={() => handleUnSave(saved.id)}>UnSave</button> : null}
       </div>
-      ))} */}
+      ))}
       </div>
     </div>
     </>
