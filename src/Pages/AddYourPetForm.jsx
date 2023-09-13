@@ -60,44 +60,44 @@ const AddYourPetForm = () => {
         </div>
         <div className='petSpecies'>
           <label>Species</label>
-          <input type='text' value={species} onChange={(e) => setSpecies(e.target.value)} required />
+          <input className='petForm' type='text' value={species} onChange={(e) => setSpecies(e.target.value)} required />
         </div>
 
         <div className='petimage'>
           <label>Photo of your pet!</label>
-          <input type='file' onChange={(e) => setPetImage(e.target.files[0])} required />
+          <input className='petForm' type='file' onChange={(e) => setPetImage(e.target.files[0])} required />
         </div>
         <div className='petsimpleClassification'>
           <label>Animal Family (i.e. canine, fish, arachnid)</label>
-          <input type='text' value={simpleClassification} onChange={(e) => setSimpleClassification(e.target.value)} required />
+          <input className='petForm' type='text' value={simpleClassification} onChange={(e) => setSimpleClassification(e.target.value)} required />
         </div>
         <div className='petAdoptionStatus'>
           <label>If you really want to send this pet for adoption, type "True"</label>
-          <input type='boolean' value={adoptionStatus} onChange={(e) => setAdoptionStatus(e.target.value)} required />
+          <input className='petForm' type='boolean' value={adoptionStatus} onChange={(e) => setAdoptionStatus(e.target.value)} required />
         </div>
         <div className='petHeight'>
           <label>How tall is your pet?</label>
-          <input type='text' value={height} onChange={(e) => setHeight(e.target.value)} required />
+          <input className='petForm' type='text' value={height} onChange={(e) => setHeight(e.target.value)} required />
         </div>
         <div className='petWeight'>
           <label>How much does your pet weigh?</label>
-          <input type='text' value={weight} onChange={(e) => setWeight(e.target.value)} required />
+          <input className='petForm' type='text' value={weight} onChange={(e) => setWeight(e.target.value)} required />
         </div>
         <div className='petPrimaryColor'>
           <label>What is your pet's main color?</label>
-          <input type='text' value={primaryColor} onChange={(e) => setPrimaryColor(e.target.value)} required />
+          <input className='petForm' type='text' value={primaryColor} onChange={(e) => setPrimaryColor(e.target.value)} required />
         </div>
         <div className='petBio'>
           <label>Tell us a little bit about your pet's origin story!</label>
-          <input type='text' value={bio} onChange={(e) => setBio(e.target.value)} required />
+          <input className='petForm' type='text' value={bio} onChange={(e) => setBio(e.target.value)} required />
         </div>
         <div className='petHypoallergenic'>
           <label>Is your pet hypoallergenic?</label>
-          <input type='text' value={hypoallergenic} onChange={(e) => setHypoallergenic(e.target.value)} required />
+          <input className='petForm' type='text' value={hypoallergenic} onChange={(e) => setHypoallergenic(e.target.value)} required />
         </div>
         <div className='petDietaryRestrictions'>
           <label>Does your pet have special dietary needs or restrictions?</label>
-          <input type='text' value={dietaryRestrictions} onChange={(e) => setDietaryRestrictions(e.target.value)} required />
+          <input className='petForm' type='text' value={dietaryRestrictions} onChange={(e) => setDietaryRestrictions(e.target.value)} required />
         </div>
 
       </div>

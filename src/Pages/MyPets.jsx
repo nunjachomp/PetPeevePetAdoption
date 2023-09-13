@@ -74,13 +74,13 @@ const MyPets = () => {
     <>
     <div className='myPetsPhotoContainer' style={{minHeight: `${minHeight}vh`}}>
     <div className='myPetsContainer'>
-      <div className='petConsult'>All of your pets, both Adopted and Fostered, are being prepared for the consultation process!<br/><br/>
+      <div className='petConsult'>All of your pets, both Adopted and Fostered, are being prepared for the consultation process!<br/>
       Once you have completed the consultation with the team, you will be trained on how to care for your pet!</div>
       <div className='adoptedFostered'>
-          <div className='adoptTitle'>My Adopted/Fostered Pets: </div>
+          <div className='adoptTitle'>My Adopted / Fostered Pets: </div>
           {userPets.map((pet) => (<div className='myPetsRow' key={pet.id}> 
           <img className="petPhoto" src={pet?.petImage} alt="pet" style={{width: '200px'}} />
-          <div className='petName'>{pet.name}{" "}</div> 
+          <div className='petNamer'>{pet.name}{" "}</div> 
           {pet.adoptedById ? <button className='petButton' onClick={() => handleUnAdopt(pet.id)}>UnAdopt</button> : null}
           {pet.adoptedById ? <button className='petButton' onClick={() => handleFoster(pet.id)}>Foster Instead</button> : null}
           {pet.fosteredById ? <button className='petButton' onClick={() => handleUnFoster(pet.id)}>Unfoster</button> : null}
@@ -92,7 +92,7 @@ const MyPets = () => {
       <div className='savedTitle'> My Saved Pets: </div>
       {savedPets.map((saved) => (<div className='myPetsRow' key={saved.id}> 
       <img className="petPhoto" src={saved?.petImage} alt="saved" style={{width: '200px'}} />
-      <div className='petName'>{saved.name}{" "}</div> 
+      <div className='petNamer'>{saved.name}{" "}</div> 
       {saved.id ? <button className='petButton' onClick={() => handleUnSave(saved.id)}>UnSave</button> : null}
       </div>
       ))}
