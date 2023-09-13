@@ -13,6 +13,8 @@ const SinglePet = () => {
 
   const {id} = useParams()
   const {user} = useContext(AuthContext)
+  const name = petInfo.name
+  const image = petInfo.petImage
 
   const getSinglePet = async() => {
      try {
@@ -45,7 +47,7 @@ const SinglePet = () => {
   const savePet = async(e) => {
     let res
     try {
-      res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: parseInt(id), userId: user}, {withCredentials: true})
+      res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: parseInt(id), userId: user, name: name, petImage: image}, {withCredentials: true})
       console.log(res.data)
       setSavedPet(res.data)
       setIsSaved(true)
@@ -57,7 +59,7 @@ const SinglePet = () => {
   const unSavePet = async(e) => {
     let res
     try {
-      res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: null, userId: null}, {withCredentials: true})  
+      res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: null, userId: null, name: null, petImage: null}, {withCredentials: true})  
       console.log(res.data)
       setSavedPet(res.data)
       setIsSaved(false)

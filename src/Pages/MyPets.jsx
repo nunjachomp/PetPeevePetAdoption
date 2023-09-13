@@ -85,7 +85,7 @@ const MyPets = () => {
       <div className='savedTitle'> My Saved Pets: </div>
       {savedPets.map((saved) => (<div className='myPetsRow' key={saved.id}> 
       <img className="petPhoto" src={saved?.petImage} alt="saved" style={{width: '200px'}} />
-      <div className='petName'>{saved.name}{saved.petId}{" "}</div> 
+      <div className='petName'>{saved.name}{" "}</div> 
       {saved.savedById ? <button className='petButton' onClick={() => handleUnSave(saved.id)}>UnSave</button> : null}
       </div>
       ))}
