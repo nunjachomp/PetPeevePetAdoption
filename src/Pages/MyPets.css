@@ -1,11 +1,11 @@
-/* .backgroundPhotoContainer {
+.myPetsPhotoContainer {
     position: relative;
-    background-image: url(../Images/Backgrounds/DSCN1470.JPG);
+    background-image: url(../Images/Backgrounds/HertzliyahBeach.jpg);
     background-attachment: fixed;
     background-size: 100vw 120vh;
     background-position: 60% 40%;
-    min-height: 100vh;
-} */
+    min-height: 120vh;
+}
 
 .myPetsContainer{
     position: relative;

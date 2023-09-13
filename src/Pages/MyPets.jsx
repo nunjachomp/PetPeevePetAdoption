@@ -8,6 +8,7 @@ const MyPets = () => {
   const { petsList, fetchAllPets, fetchAllSavedPets, savedList } = useContext(PetsContext)
   const { user } = useContext(AuthContext)
   const [rerender, setRerender] = useState(0);
+  const [minHeight, setMinHeight] = useState('120')
 
   useEffect(() => {
     fetchAllPets()
@@ -24,7 +25,7 @@ const MyPets = () => {
 
   const savedPets = savedList.filter((saved) => {
     const test = (saved.userId == user && saved.petId !== null && saved.name !== null);
-    console.log(test)
+    // console.log(test)
     return test;
   });
 
@@ -65,9 +66,13 @@ const MyPets = () => {
     console.log('a')
   }
 
+  useEffect(() => {
+    setMinHeight((userPets.length + savedPets.length) * 20 + 100);
+  }, [userPets]);
+
   return (
     <>
-    <div className='backgroundPhotoContainer'>
+    <div className='myPetsPhotoContainer' style={{minHeight: `${minHeight}vh`}}>
     <div className='myPetsContainer'>
       <div className='petConsult'>All of your pets, both Adopted and Fostered, are being prepared for the consultation process!<br/><br/>
       Once you have completed the consultation with the team, you will be trained on how to care for your pet!</div>
