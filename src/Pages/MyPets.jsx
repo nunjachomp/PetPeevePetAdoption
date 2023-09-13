@@ -9,7 +9,14 @@ const MyPets = () => {
   const { user } = useContext(AuthContext)
   const [rerender, setRerender] = useState(0);
   const [minHeight, setMinHeight] = useState('120')
+  const [updatedSavedList, setUpdatedSavedList] = useState([]);
 
+  let initialList = savedList
+
+  useEffect(() => {
+    setUpdatedSavedList(initialList);
+  }, [initialList]);
+  
   useEffect(() => {
     fetchAllPets()
   }, [rerender])
@@ -23,9 +30,9 @@ const MyPets = () => {
     return pet.adoptedById == user || pet.fosteredById == user;
   });
 
-  const savedPets = savedList.filter((saved) => {
+  const savedPets = updatedSavedList.filter((saved) => {
     const test = (saved.userId == user && saved.petId !== null && saved.name !== null);
-    // console.log(test)
+    console.log(test)
     return test;
   });
 
@@ -62,9 +69,16 @@ const MyPets = () => {
     }
   };
 
-  const handleUnSave = () => {
-    console.log('a')
-  }
+  const handleDeleteSaved = async (petId) => {
+    try {
+      const res = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/adoption/${petId}`, {withCredentials: true});
+      if (res.data.ok) {
+        setUpdatedSavedList(updatedSavedList.filter((pet) => pet.id !== petId));
+    }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     setMinHeight((userPets.length + savedPets.length) * 20 + 100);
@@ -93,7 +107,7 @@ const MyPets = () => {
       {savedPets.map((saved) => (<div className='myPetsRow' key={saved.id}> 
       <img className="petPhoto" src={saved?.petImage} alt="saved" style={{width: '200px'}} />
       <div className='petNamer'>{saved.name}{" "}</div> 
-      {saved.id ? <button className='petButton' onClick={() => handleUnSave(saved.id)}>UnSave</button> : null}
+      {saved.id ? <button className='petButton' onClick={() => handleDeleteSaved(saved.id)}>UnSave</button> : null}
       </div>
       ))}
       </div>

@@ -22,7 +22,6 @@ const fetchAllPets = async () => {
 const fetchAllSavedPets = async () => {
     try {
       const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/adoption/savedpets`, {withCredentials: true})
-      console.log('Response data:', res.data);
       setSavedList(res.data);
     } catch (err) {
       console.log(err);
