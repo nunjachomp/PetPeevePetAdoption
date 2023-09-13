@@ -19,13 +19,11 @@ const MyPets = () => {
 
   const userPets = petsList.filter((pet) => {
     const test = (pet.adoptedById == user);
-    // console.log(test)
     return pet.adoptedById == user || pet.fosteredById == user;
   });
 
   const savedPets = savedList.filter((saved) => {
     const test = (saved.userId == user && saved.petId !== null);
-    // console.log(test)
     return saved.userId == user;
   });
 
