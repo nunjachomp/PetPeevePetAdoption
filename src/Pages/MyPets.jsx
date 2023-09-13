@@ -32,7 +32,6 @@ const MyPets = () => {
 
   const savedPets = updatedSavedList.filter((saved) => {
     const test = (saved.userId == user && saved.petId !== null && saved.name !== null);
-    console.log(test)
     return test;
   });
 
@@ -40,7 +39,7 @@ const MyPets = () => {
     let res;
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/adopt`, { adopt: false }, { withCredentials: true });
-      console.log('Pet Unadopted Successfully');
+      alert('Pet Unadopted Successfully');
       setRerender(Math.random())
     } catch (err) {
       console.log(err);
@@ -51,7 +50,7 @@ const MyPets = () => {
     let res;
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/foster`, { foster: true }, { withCredentials: true });
-      console.log('Pet Fostered Successfully');
+      alert('Pet Fostered Successfully');
       setRerender(Math.random())
     } catch (err) {
       console.log(err);
@@ -62,7 +61,7 @@ const MyPets = () => {
     let res;
     try {
       res = await axios.put(`${process.env.REACT_APP_SERVER_URL}/pets/${petId}/foster`, { foster: false }, { withCredentials: true });
-      console.log('Pet Unfostered Successfully');
+      alert('Pet Unfostered Successfully');
       setRerender(Math.random())
     } catch (err) {
       console.log(err);

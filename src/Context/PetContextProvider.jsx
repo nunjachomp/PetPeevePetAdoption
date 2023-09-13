@@ -31,7 +31,6 @@ const fetchAllSavedPets = async () => {
   const addNewPet = async (newPet) => {
     try {
       const res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/pets`, newPet, {withCredentials: true});
-      console.log(res.data);
       const newPetsList = [...petsList, res.data];
       setPetsList(newPetsList);
     } catch (err) {

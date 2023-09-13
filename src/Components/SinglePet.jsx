@@ -48,9 +48,10 @@ const SinglePet = () => {
     let res
     try {
       res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: parseInt(id), userId: user, name: name, petImage: image}, {withCredentials: true})
-      console.log(res.data)
       setSavedPet(res.data)
       setIsSaved(true)
+      navigate(`/allAdoptablePets`)
+      alert(res.data.message)
     } catch(err) {
       console.log(err)
     }
@@ -60,7 +61,6 @@ const SinglePet = () => {
     let res
     try {
       res = await axios.post(`${process.env.REACT_APP_SERVER_URL}/adoption/save`, {petId: null, userId: null, name: null, petImage: null}, {withCredentials: true})  
-      console.log(res.data)
       setSavedPet(res.data)
       setIsSaved(false)
     } catch(err) {
