@@ -10,7 +10,7 @@
     position: absolute;
     width: 75vw;
     border: 1px solid rgb(1, 105, 19);
-    top: 28%;
+    top: 15%;
     font-weight: bold;
     text-align: center;
 }
@@ -26,7 +26,7 @@
 .adoptedFostered {
     position: relative;
     width: 75vw;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     padding-bottom: 2rem;
@@ -37,6 +37,7 @@
     padding: 1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .petPhoto {
@@ -45,6 +46,7 @@
 
 .petName {
     padding: 1rem;
+    width: 150px;
 }
 
 .petButton {
@@ -55,7 +57,7 @@
 .saved {
     position: relative;
     width: 75vw;
-    top: 50%;
+    top: 32%;
     left: 50%;
     transform: translateX(-50%);
     padding-bottom: 2rem;

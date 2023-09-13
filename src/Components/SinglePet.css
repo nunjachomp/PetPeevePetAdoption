@@ -6,12 +6,62 @@
 
 .individualPetProfileContainer {
     position: absolute;
-    top: 25%;
+    top: 13%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    border: 1px solid red;
+    border-radius: 2rem;
+    width: 700px;
+    padding-bottom: 2rem;
+}
+
+.name, .species, .individualPetPhoto, .type, .height, .weight, .hypo, .diet, .bio {
+    position: relative;
+}
+
+.name {
+    /* left: 35%; */
+}
+
+.species {
+    /* right: 26%;
+    top: 1.5%;
+    position: absolute; */
 }
 
 .individualPetPhoto {
+    display: flex;
     width: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.type {
+    display: inline-block;
+    margin: 1rem;
+}
+
+.height {
+    display: inline-block;
+    margin: 1rem;
+}
+
+.weight {
+    display: inline-block;
+    margin: 1rem;
+}
+
+.hypo {
+    display: inline-block;
+}
+
+.diet {
+    display: inline-block;
+}
+
+.bio {
+    width: 460px;
+    left: 50%;
+    transform: translateX(-50%);
 }

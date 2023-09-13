@@ -78,21 +78,20 @@ const SinglePet = () => {
   return (
     <div className='outerIndividualPet'>
       <div className='individualPetProfileContainer'>
-        <h1>{petInfo.name}</h1>
-        <h3>{petInfo.species}</h3>
+        <h1 className='name'>{petInfo.name}</h1>
+        <h3 className='species'>the {petInfo.species}</h3>
         <img className='individualPetPhoto' src={petInfo.petImage} alt={petInfo.name}/>
-        <p>Type: {petInfo.simple_classification}</p>
-        <p>Available to adopt? {petInfo.adoption_status}</p>
-        <p>Height: {petInfo.height}</p>
-        <p>Weight: {petInfo.weight}</p>
-        <p>Hypoallergenic: {petInfo.hypoallergenic}</p>
-        <p>Bio: {petInfo.bio}</p>
-        <p>Dietary Needs: {petInfo.dietary_restrictions}</p>
+        <p className='type'>Animal Type: <b>{petInfo.simple_classification}</b></p>
+        <p className='height'>Height: <b>{petInfo.height}cm</b></p>
+        <p className='weight'>Weight: <b>{petInfo.weight}kg</b></p>
+        <p className='hypo'>Hypoallergenic: <b>{petInfo.hypoallergenic === 1 ? "Yes" : "No"}</b></p>
+        <p className='diet'><b>Dietary Needs</b>:<br/>{petInfo.dietary_restrictions}</p>
+        <p className='bio'><b>{petInfo.name}'s Story:</b> <br/>{petInfo.bio}</p>
         <button id='adopt' onClick={adoptPet}>Adopt</button>
         {/* <button id='unadopt' onClick={adoptPet}>Unadopt</button> */}
         {isSaved == false ? (
         <button id='saved' onClick={savePet}>Save For Later</button> ) : (
-        <button id='unsaved' onClick={unSavePet}>Unsave For Later</button>)}
+        <button id='unsaved' onClick={unSavePet}>Unsave</button>)}
      
       </div>
     </div>
