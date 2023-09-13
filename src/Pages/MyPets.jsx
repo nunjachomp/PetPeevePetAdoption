@@ -23,8 +23,9 @@ const MyPets = () => {
   });
 
   const savedPets = savedList.filter((saved) => {
-    const test = (saved.userId == user && saved.petId !== null);
-    return saved.userId == user;
+    const test = (saved.userId == user && saved.petId !== null && saved.name !== null);
+    console.log(test)
+    return test;
   });
 
   const handleUnAdopt = async (petId) => {
