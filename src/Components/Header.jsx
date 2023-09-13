@@ -32,7 +32,7 @@ const Header = () => {
         <img className="mainLogo" src={logo} alt="header" />
       </div>
       <ul className="header_center">
-        <li><a href="/home#backToTop" className="home"> Home </a></li>
+        <li><a href="/home" className="home"> Home </a></li>
         <li><NavLink to="/allAdoptablePets" className="search">Search</NavLink></li>
         <li><NavLink to='/user/:id/' className="myPets">My Pets</NavLink></li>
         <li><NavLink to="/signup" className="signup">Sign Up</NavLink></li>
