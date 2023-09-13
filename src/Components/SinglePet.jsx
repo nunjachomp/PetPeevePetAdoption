@@ -67,15 +67,6 @@ const SinglePet = () => {
       console.log(err)
     }
   }
- 
-  // const getSavedPets = async() => {
-  //   try {
-  //   res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/adoption/save`)  
-  //   console.log(res.data)
-  //   } catch(err) {
-  //     console.log(err)
-  //   }
-  // }
 
   return (
     <div className='outerIndividualPet'>
@@ -90,11 +81,9 @@ const SinglePet = () => {
         <p className='diet'><b>Dietary Needs</b>:<br/>{petInfo.dietary_restrictions}</p>
         <p className='bio'><b>{petInfo.name}'s Story:</b> <br/>{petInfo.bio}</p>
         <button id='adopt' onClick={adoptPet}>Adopt</button>
-        {/* <button id='unadopt' onClick={adoptPet}>Unadopt</button> */}
         {isSaved == false ? (
         <button id='saved' onClick={savePet}>Save For Later</button> ) : (
         <button id='unsaved' onClick={unSavePet}>Unsave</button>)}
-     
       </div>
     </div>
   )

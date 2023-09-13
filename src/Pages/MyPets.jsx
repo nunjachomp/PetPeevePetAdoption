@@ -61,12 +61,13 @@ const MyPets = () => {
     }
   };
 
-  const handleUnSave = async () => {
-    console.log(0)
+  const handleUnSave = () => {
+    console.log('a')
   }
 
   return (
     <>
+    <div className='backgroundPhotoContainer'>
     <div className='myPetsContainer'>
       <div className='petConsult'>All of your pets, both Adopted and Fostered, are being prepared for the consultation process!<br/><br/>
       Once you have completed the consultation with the team, you will be trained on how to care for your pet!</div>
@@ -87,10 +88,11 @@ const MyPets = () => {
       {savedPets.map((saved) => (<div className='myPetsRow' key={saved.id}> 
       <img className="petPhoto" src={saved?.petImage} alt="saved" style={{width: '200px'}} />
       <div className='petName'>{saved.name}{" "}</div> 
-      {saved.savedById ? <button className='petButton' onClick={() => handleUnSave(saved.id)}>UnSave</button> : null}
+      {saved.id ? <button className='petButton' onClick={() => handleUnSave(saved.id)}>UnSave</button> : null}
       </div>
       ))}
       </div>
+    </div>
     </div>
     </>
   )
