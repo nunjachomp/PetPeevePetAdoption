@@ -4,6 +4,7 @@
     background-attachment: fixed;
     background-size: 100vw 120vh;
     background-position: 60% 40%;
+    min-height: 100vh;
 }
 
 .petsAvail {
